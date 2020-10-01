@@ -1,8 +1,10 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const { generate } = require("rxjs");
 
-function generateReadMe() {
-    inquirer.prompt([
+async function generateReadMe() {
+
+    const responses = await inquirer.prompt([
         {
             type: "input",
             message: "What is the project name?",
@@ -30,42 +32,46 @@ function generateReadMe() {
             name: "license",
             choices: []
         }
-    ]).then(function (response) {
+    ])
+
+    function fillReadMe(response) {
 
         // HTML Template with user responses filled in
         const mdTemplate = `# ${response.projectName}
-        ${response.license}`
+                    ${response.license}`
 
         // create file name variable, remove spaces and convert to lowercase
-        const fileName = `${response.projectName.replace(/\s/g, '').toLowerCase() }.md`;
+        const fileName = `${response.projectName.replace(/\s/g, '').toLowerCase()}.md`;
 
         // Save html template to a file
-        fs.writeFile(fileName, mdTemplate, function(err) {
-        
-          if (err) {
-            return console.log(err);
-          }
-        
-          console.log("Success!");
-        
-        });
-      });
+        fs.writeFile(fileName, mdTemplate, function (err) {
+
+            if (err) {
+                return console.log(err);
+            }
+
+            console.log("Success!");
+
+        })
+    }
+
+    await fillReadMe(responses);
 }
 
 generateReadMe();
 
-// require all the dependencies I'll need
-    // fs
-    // inquirer
+                // require all the dependencies I'll need
+                // fs
+                // inquirer
 
-// create an array of questions
+                // create an array of questions
 
-// write an actual readme in markdown as a template
+                // write an actual readme in markdown as a template
 
-// function that will generate my readme template
+                // function that will generate my readme template
 
-// use inquirer to prompt the user for inputs
+                // use inquirer to prompt the user for inputs
 
-// use the answers that come back from the inquirer - pass into readme function
+                // use the answers that come back from the inquirer - pass into readme function
 
-// write file using template genrated from readme function
+                // write file using template genrated from readme function
