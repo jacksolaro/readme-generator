@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 - Github Repo: https://github.com/jacksolaro/readme-generator
-- Deployed App: https://jacksolaro.github.io/readme-generator/
+- Deployed App: NA
 
 ## DESCRIPTION
 ---------------------
