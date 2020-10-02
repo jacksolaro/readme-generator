@@ -5,38 +5,25 @@ const mdTemplate = require("./mdTemplate")
 
 async function generateReadMe() {
 
+    // Prompt the User for responses. Questions for Prompting can be found in questions.js
     const response = await inquirer.prompt(questions)
 
+    // Use user responses to fill template. Template can be found in mdTemplate.js
     const filledTemplate = mdTemplate.fillTemplate(response);
 
-    console.log(filledTemplate);
+    // File Type (default .md for markdown)
+    const fileType = ".md";
 
     // create file name variable, remove spaces and convert to lowercase
-    const fileName = `${response.projectName.replace(/\s/g, '').toLowerCase()}.md`;
+    const fileName = `${response.projectName.replace(/\s/g, '').toLowerCase()}${fileType}`;
 
     // Save html template to a file
     fs.writeFile(fileName, filledTemplate, function (err) {
         if (err) {
             return console.log(err);
         }
-        console.log("Success!");
+        console.log("Success! ");
     })
 }
 
 generateReadMe();
-
-                // require all the dependencies I'll need
-                // fs
-                // inquirer
-
-                // create an array of questions
-
-                // write an actual readme in markdown as a template
-
-                // function that will generate my readme template
-
-                // use inquirer to prompt the user for inputs
-
-                // use the answers that come back from the inquirer - pass into readme function
-
-                // write file using template genrated from readme function
