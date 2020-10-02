@@ -11,14 +11,8 @@ async function generateReadMe() {
     // Use user responses to fill template. Template can be found in mdTemplate.js
     const filledTemplate = mdTemplate.fillTemplate(response);
 
-    // File Type (default .md for markdown)
-    const fileType = ".md";
-
-    // create file name variable, remove spaces and convert to lowercase
-    const fileName = `${response.projectName.replace(/\s/g, '').toLowerCase()}${fileType}`;
-
     // Save html template to a file
-    fs.writeFile(fileName, filledTemplate, function (err) {
+    fs.writeFile("README.md", filledTemplate, function (err) {
         if (err) {
             return console.log(err);
         }
