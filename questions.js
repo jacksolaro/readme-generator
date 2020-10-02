@@ -1,3 +1,4 @@
+// This is the list of questions that is asked to the user Re: Their read me. Questions are asked using inquirer.js
 const questions = [
     {
         type: "input",
@@ -45,6 +46,11 @@ const questions = [
     },
     {
         type: "input",
+        message: "Please provide some information regarding future releases:",
+        name: "futureRelease",
+    },
+    {
+        type: "input",
         message: "Please provide your github username:",
         name: "githubUsername",
     },
@@ -57,7 +63,7 @@ const questions = [
         type: "input",
         message: "Please provide a link to the deployed app:",
         name: "projectDeployed",
-    },
+    }
 ]
 
 module.exports = questions;

@@ -1,11 +1,13 @@
+// This function generates the readMe. Updating the readMe template here will update what is generated
+
 function fillTemplate(response) {
 const template = 
 `# ${response.projectName}
 
 ${response.license}
 
-Github Repo: ${response.projectRepo}
-Deployed App: ${response.projectDeployed}
+- Github Repo: ${response.projectRepo}
+- Deployed App: ${response.projectDeployed}
 
 ## DESCRIPTION
 ---------------------
@@ -37,6 +39,7 @@ ${response.testingInstructions}
 
 ## FUTURE RELEASES
 ------------
+${response.futureRelease}
 
 ## LICENSE
 ------------
