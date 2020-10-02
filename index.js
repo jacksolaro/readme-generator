@@ -1,61 +1,26 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const { generate } = require("rxjs");
+const questions = require("./questions")
+const mdTemplate = require("./mdTemplate")
 
 async function generateReadMe() {
 
-    const responses = await inquirer.prompt([
-        {
-            type: "input",
-            message: "What is the project name?",
-            name: "projectName"
-        },
-        // {
-        //     type: "input",
-        //     message: "Please provide a description of the project:",
-        //     name: "description",
-        // },
-        // {
-        //     type: "input",
-        //     message: "Please provide special installation instructions:",
-        //     name: "installationInstructions",
-        // },
-        // {
-        //     type: "input",
-        //     message: "Please provide some testing instructions:",
-        //     name: "testingInstructions",
-        // },
-        {
-            // update type
-            type: "input",
-            message: "Which license is this project covered under?",
-            name: "license",
-            choices: []
+    const response = await inquirer.prompt(questions)
+
+    const filledTemplate = mdTemplate.fillTemplate(response);
+
+    console.log(filledTemplate);
+
+    // create file name variable, remove spaces and convert to lowercase
+    const fileName = `${response.projectName.replace(/\s/g, '').toLowerCase()}.md`;
+
+    // Save html template to a file
+    fs.writeFile(fileName, filledTemplate, function (err) {
+        if (err) {
+            return console.log(err);
         }
-    ])
-
-    function fillReadMe(response) {
-
-        // HTML Template with user responses filled in
-        const mdTemplate = `# ${response.projectName}
-                    ${response.license}`
-
-        // create file name variable, remove spaces and convert to lowercase
-        const fileName = `${response.projectName.replace(/\s/g, '').toLowerCase()}.md`;
-
-        // Save html template to a file
-        fs.writeFile(fileName, mdTemplate, function (err) {
-
-            if (err) {
-                return console.log(err);
-            }
-
-            console.log("Success!");
-
-        })
-    }
-
-    await fillReadMe(responses);
+        console.log("Success!");
+    })
 }
 
 generateReadMe();
