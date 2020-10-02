@@ -26,4 +26,5 @@ async function generateReadMe() {
     })
 }
 
+// Call the generate ReadMe Function
 generateReadMe();

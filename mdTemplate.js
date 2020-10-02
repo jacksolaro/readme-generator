@@ -4,8 +4,8 @@ const template =
 
 ${response.license}
 
-Github Repo: ${response.license}
-Deployed App: ${response.license}
+Github Repo: ${response.projectRepo}
+Deployed App: ${response.projectDeployed}
 
 ## DESCRIPTION
 ---------------------
@@ -49,7 +49,7 @@ This repository is covered under the ${response.license} license.
 
 ## QUESTIONS
 ------------
-Please direct all questions related to this repository to ${response.githubUsername}`
+Please direct all questions related to this repository to https://github.com/${response.githubUsername}`
 
 return template;
 }; 
