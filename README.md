@@ -1,13 +1,13 @@
-# ReadMe Generator
+# Note Taking Application
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- Github Repo: https://github.com/jacksolaro/readme-generator
-- Deployed App: https://jacksolaro.github.io/readme-generator/
+- Github Repo: https://github.com/jacksolaro/note_taking_app
+- Deployed App: https://notetakingappjack.herokuapp.com/
 
 ## DESCRIPTION
 ---------------------
-This application allows a user to automatically generate readMe files using user input provided in the command prompt. 
+This application allows a user to write and save notes for future reference.
 
 ## TABLE OF CONTENTS
 ---------------------
@@ -22,23 +22,20 @@ This application allows a user to automatically generate readMe files using user
 
 ## INSTALLATION
 ------------
-To use this codebase, you will need to use node.js. Instructions for setting up node.js can be found here
+To use this repo, you must install node js
 
 ## USAGE
 ------------
-
-![](./app-demo.gif)
-
-To use this project. 1. Run the index.js file in your command terminal by typing node index.js 2. Fill out the prompts with details on your project 3. The readMe file will be generated in the same directory as your index file
+This application is hosted at ________. To use, simply click the button to go to the notes page. On the notes page you can click the note title and note text to fill with info. Then click the save button in the top right to save that note to memory. To edit a note in memory, just select it from the list of notes on the left side of the screen. To delete a note, select the trash icon on the note you would like to delete.
 
 
 ## TESTS
 ------------
-No testing details
+No testing instructions at this time
 
 ## FUTURE RELEASES
 ------------
-Would love to add multiple template types in the future. Additionally, would like to add more license options and better UI around the prompting experience
+In future release, I would love to add the ability to edit a previous note as well as some rich text capabilities like bold, underline, etc
 
 ## LICENSE
 ------------
@@ -46,7 +43,7 @@ This repository is covered under the [![License: MIT](https://img.shields.io/bad
 
 ## CONTRIBUTIONS
 ------------
-NA
+
 
 
 ## QUESTIONS
